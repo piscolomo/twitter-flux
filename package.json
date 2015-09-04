@@ -1,0 +1,19 @@
+{
+  "name": "twitter-flux",
+  "version": "1.0.0",
+  "description": "A Twitter clone built using React and Flux",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheBlasfem/twitter-flux.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheBlasfem/twitter-flux/issues"
+  },
+  "homepage": "https://github.com/TheBlasfem/twitter-flux#readme"
+}
