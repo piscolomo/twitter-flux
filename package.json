@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/TheBlasfem/twitter-flux/issues"
   },
-  "homepage": "https://github.com/TheBlasfem/twitter-flux#readme"
+  "homepage": "https://github.com/TheBlasfem/twitter-flux#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-plumber": "^1.0.1",
+    "reactify": "^1.1.1"
+  }
 }
