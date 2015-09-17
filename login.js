@@ -27,3 +27,15 @@ passport.serializeUser(function(user, done){
 passport.deserializeUser(function(cid, done){
   done(null, users.get(cid));
 });
+
+var router = require('express').Router();
+var bodyParser = require('body-parser');
+
+router.use(bodyParser.urlencoded({ extended: true }));
+router.use(bodyParser.json());
+router.use(require('express-session')({
+  secret: 'hsabjkfbsajkf609823y140g', resave: true, saveUninitialized: true
+}));
+router.use(require('cookie-parser')());
+router.use(passport.initialize());
+router.use(passport.session());
