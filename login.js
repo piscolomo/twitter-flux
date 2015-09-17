@@ -5,7 +5,7 @@ var locallyDB = require('locallydb');
 var db = new locallyDB('./.data');
 var users = db.collection('users');
 
-var crypto = require('cryto');
+var crypto = require('crypto');
 
 function hash(password){
   return crypto.createhash('sha512').update(password).digest('hex');
@@ -39,3 +39,9 @@ router.use(require('express-session')({
 router.use(require('cookie-parser')());
 router.use(passport.initialize());
 router.use(passport.session());
+
+router.get("/login", function(req, res){
+  res.render("login");
+});
+
+exports.routes = router;
