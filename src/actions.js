@@ -7,7 +7,7 @@ Object.keys(constants).forEach(function(key){
     return word[0] + word.slice(1).toLowerCase();
   }).join("");
 
-  exports[key] = function(data){
+  exports[funcName] = function(data){
     dispatcher.dispatch({
       actionType: constants[key],
       data: data
