@@ -8,6 +8,7 @@ var Home = require('./components/Home');
 var routes = (
   <Route handler={App}>
     <Route name="home" handler={Home} path="/" />
+    <Route name="user" handler={Home} path="/user/:id" />
   </Route>
 );
 

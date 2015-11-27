@@ -1,12 +1,11 @@
 var React = require('react');
+var ChirpBox = require('./ChirpBox');
 
 var ChirpList = React.createClass({
   render: function(){
     var items = this.props.chirps.map(function(chirp){
       return (
-        <li key={chirp.cid}>
-          <strong>{chirp.username}</strong> said "{chirp.text}"
-        </li>
+        <ChirpBox key={chirp.cid} chirp={chirp}/>
       );
     });
 
