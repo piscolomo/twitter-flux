@@ -1,11 +1,7 @@
 var React = require('react');
 var ReactRouter = require('react-router');
-
 var Route = ReactRouter.Route;
-
 var API = require('./api');
-var chirpStore = require('./stores/chirps');
-
 var App = require('./components/App');
 var Home = require('./components/Home');
 
