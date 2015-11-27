@@ -33,6 +33,8 @@
     "locallydb": "0.0.9",
     "object-assign": "^3.0.0",
     "passport": "^0.3.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "react": "^0.13.3",
+    "react-router": "^0.13.5"
   }
 }
