@@ -3,6 +3,7 @@ var UserStore = require('../stores/users');
 var actions = require('../actions');
 var Link = require('react-router').Link;
 var Box = require('./ChirpBox');
+var FollowButton = require('./FollowButton');
 
 var UserList = module.exports = React.createClass({
     getInitialState: function () {
@@ -26,7 +27,7 @@ var UserList = module.exports = React.createClass({
       }.bind(this)).map(function(user){
         return (
           <Box user={user} key={user.cid}>
-            Follow Buttons
+            <FollowButton userId={user.cid} />
           </Box>
         );
       });
