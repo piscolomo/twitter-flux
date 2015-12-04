@@ -9,6 +9,9 @@ module.exports = {
     inline: true,
     contentBase: './public',
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx', '.scss', '.css']
+  },
   module: {
     loaders: [
       {

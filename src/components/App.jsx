@@ -1,8 +1,11 @@
-var React = require('react');
-var RouteHandler = require('react-router').RouteHandler;
+import React from 'react';
+import {RouteHandler} from 'react-router';
 
-var App = React.createClass({
-  render: function(){
+class App extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  render(){
     return (
       <div>
         <div className="row">
@@ -21,6 +24,6 @@ var App = React.createClass({
       </div>
     );
   }
-});
+}
 
-module.exports = App;
+export default App;

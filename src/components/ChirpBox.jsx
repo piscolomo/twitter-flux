@@ -1,11 +1,14 @@
-var React = require('react');
-var utils = require('../utils');
-var Link = require('react-router').Link;
+import React from 'react';
+import utils from '../utils';
+import {Link} from 'react-router';
 
-var ChirpBox = React.createClass({
-  render: function(){
-    var user = this.props.user;
-    var timestamp = this.props.timestamp ? ' ' + String.fromCharCode(8226) + ' ' + this.props.timestamp : '';
+class ChirpBox extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  render(){
+    let user = this.props.user;
+    let timestamp = this.props.timestamp ? ' ' + String.fromCharCode(8226) + ' ' + this.props.timestamp : '';
     return (
       <li className="row chirp">
         <Link className="two columns" to="user" params={{id: user.userId || user.cid}}>
@@ -23,6 +26,6 @@ var ChirpBox = React.createClass({
       </li>
     );
   }
-});
+}
 
-module.exports = ChirpBox;
+export default ChirpBox;

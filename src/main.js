@@ -2,9 +2,9 @@ var React = require('react');
 var ReactRouter = require('react-router');
 var Route = ReactRouter.Route;
 var API = require('./api');
-var App = require('./components/App');
-var Home = require('./components/Home');
-var UserList = require('./components/UserList');
+import App from './components/App';
+import Home from './components/Home';
+import UserList from './components/UserList';
 
 var routes = (
   <Route handler={App}>
