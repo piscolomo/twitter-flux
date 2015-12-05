@@ -1,11 +1,13 @@
-export default {
-  CHIRP: 'CHIRP',
-  CHIRPED: 'CHIRPED',
-  GOT_CHIRPS: 'GOT_CHIRPS',
-  GOT_CURRENT_USER: 'GOT_CURRENT_USER',
-  GOT_USERS: 'GOT_USERS',
-  FOLLOW: 'FOLLOW',
-  FOLLOWED: 'FOLLOWED',
-  UNFOLLOW: 'UNFOLLOW',
-  UNFOLLOWED: 'UNFOLLOWED'
-};
+import keyMirror from 'keymirror';
+
+export default keyMirror({
+  CHIRP: null,
+  CHIRPED: null,
+  GOT_CHIRPS: null,
+  GOT_CURRENT_USER: null,
+  GOT_USERS: null,
+  FOLLOW: null,
+  FOLLOWED: null,
+  UNFOLLOW: null,
+  UNFOLLOWED: null
+});
