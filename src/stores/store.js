@@ -3,6 +3,7 @@ import {EventEmitter} from 'events';
 import dispatcher from '../dispatcher';
 
 const CHANGE_EVENT = "CHANGE";
+let events = new EventEmitter();
 
 const storeMethods = {
   init(){},
@@ -25,13 +26,13 @@ const storeMethods = {
     })[0];
   },
   addChangeListener(fn){
-    this.on(CHANGE_EVENT, fn);
+    events.on(CHANGE_EVENT, fn);
   },
   removeChangeListener(fn){
-    this.removeListener(CHANGE_EVENT, fn);
+    events.removeListener(CHANGE_EVENT, fn);
   },
   emitChange(){
-    this.emit(CHANGE_EVENT);
+    events.emit(CHANGE_EVENT);
   },
   bindAction(actionType, actionFn){
     if(this.actions[actionType]){
@@ -49,7 +50,7 @@ export default {
       actions: {}
     };
 
-    assign(store, EventEmitter.prototype, storeMethods, methods);
+    assign(store, storeMethods, methods);
 
     store.init();
 
