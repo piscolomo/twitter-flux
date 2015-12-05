@@ -1,16 +1,20 @@
-var dispatcher = require('./dispatcher');
-var constants = require('./constants');
+import dispatcher from './dispatcher';
+import constants from './constants';
 
-Object.keys(constants).forEach(function(key){
-  var funcName = key.split('_').map(function(word, i){
+const actions = {}
+
+Object.keys(constants).forEach((key)=>{
+  let funcName = key.split('_').map((word, i)=>{
     if (i===0) return word.toLowerCase();
     return word[0] + word.slice(1).toLowerCase();
   }).join("");
 
-  exports[funcName] = function(data){
+  actions[funcName] = (data)=>{
     dispatcher.dispatch({
       actionType: constants[key],
       data: data
     });
   }
 });
+
+export default actions;

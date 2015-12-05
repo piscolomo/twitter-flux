@@ -1,13 +1,14 @@
-var constants = require('../constants');
+import constants from '../constants';
+import Store from './store';
 
-var UserStore = module.exports = require('./store').extend({
-  init: function(){
+export default Store.extend({
+  init(){
     this.bindAction(constants.GOT_USERS, this.set);
     this.bindAction(constants.FOLLOWED, this.updateUser);
     this.bindAction(constants.UNFOLLOWED, this.updateUser);
   },
   currentUser: USER,
-  updateUser: function(data){
+  updateUser(data){
     this.currentUser = data;
   }
 });

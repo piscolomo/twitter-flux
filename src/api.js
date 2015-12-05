@@ -1,11 +1,11 @@
-var actions = require('./actions');
-var dispatcher = require('./dispatcher');
-var constants = require('./constants');
+import actions from './actions';
+import dispatcher from './dispatcher';
+import constants from './constants';
 
 function get(url){
   return fetch(url,{
     credentials: 'same-origin'
-  }).then(function(res){
+  }).then((res)=>{
     return res.json();
   });
 }
@@ -19,32 +19,32 @@ function post(url, body){
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     }
-  }).then(function(res){
+  }).then((res)=>{
     return res.json();
   });
 }
 
-var API = module.exports = {
-  fetchChirps: function(){
+const API = {
+  fetchChirps(){
     get('/api/chirps').then(actions.gotChirps.bind(actions));
   },
-  fetchUsers: function(){
+  fetchUsers(){
     get('/api/users').then(actions.gotUsers.bind(actions));
   },
-  saveChirp: function(text){
+  saveChirp(text){
     text = text.trim();
     if (text === "") return;
     post('/api/chirps', {text: text}).then(actions.chirped.bind(actions));
   },
-  follow: function(id){
+  follow(id){
     post('/api/follow/' + id).then(actions.followed.bind(actions));
   },
-  unfollow: function(id){
+  unfollow(id){
     post('/api/unfollow/' + id).then(actions.unfollowed.bind(actions));
   }
 };
 
-dispatcher.register(function(action){
+dispatcher.register((action)=>{
   switch (action.actionType){
     case constants.CHIRP:
       API.saveChirp(action.data);
@@ -59,3 +59,5 @@ dispatcher.register(function(action){
       break;
   }
 });
+
+export default API;

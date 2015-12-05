@@ -1,12 +1,12 @@
-var React = require('react');
-var ReactRouter = require('react-router');
-var Route = ReactRouter.Route;
-var API = require('./api');
+import React from 'react';
+import ReactRouter from 'react-router';
+import {Route} from 'react-router';
+import API from './api';
 import App from './components/App';
 import Home from './components/Home';
 import UserList from './components/UserList';
 
-var routes = (
+let routes = (
   <Route handler={App}>
     <Route name="home" handler={Home} path="/" />
     <Route name="users" handler={UserList} />
@@ -17,6 +17,6 @@ var routes = (
 API.fetchChirps();
 API.fetchUsers();
 
-ReactRouter.run(routes, ReactRouter.HistoryLocation, function(Root){
+ReactRouter.run(routes, ReactRouter.HistoryLocation, (Root)=>{
   React.render(<Root />, document.getElementById("app"));
 });

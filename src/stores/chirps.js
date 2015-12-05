@@ -1,14 +1,15 @@
-var constants = require('../constants');
-var UserStore = require('./users');
+import constants from '../constants';
+import Store from './store';
+import UserStore from './users';
 
-var ChirpStore = module.exports = require('./store').extend({
-  init: function(){
+export default Store.extend({
+  init(){
     this.bindAction(constants.GOT_CHIRPS, this.set);
     this.bindAction(constants.CHIRPED, this.add);
   },
-  timeline: function () {
-    var ids = [UserStore.currentUser.cid].concat(UserStore.currentUser.following);
-    return this._data.filter(function (chirp) {
+  timeline(){
+    let ids = [UserStore.currentUser.cid].concat(UserStore.currentUser.following);
+    return this._data.filter((chirp)=>{
       return ids.indexOf(chirp.userId) > -1;
     });
   },

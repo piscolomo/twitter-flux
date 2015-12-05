@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   CHIRP: 'CHIRP',
   CHIRPED: 'CHIRPED',
   GOT_CHIRPS: 'GOT_CHIRPS',
