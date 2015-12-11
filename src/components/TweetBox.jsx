@@ -2,7 +2,7 @@ import React from 'react';
 import utils from '../utils';
 import {Link} from 'react-router';
 
-class ChirpBox extends React.Component{
+class TweetBox extends React.Component{
   constructor(props){
     super(props);
   }
@@ -10,7 +10,7 @@ class ChirpBox extends React.Component{
     let user = this.props.user;
     let timestamp = this.props.timestamp ? ' ' + String.fromCharCode(8226) + ' ' + this.props.timestamp : '';
     return (
-      <li className="row chirp">
+      <li className="row tweet">
         <Link className="two columns" to="user" params={{id: user.userId || user.cid}}>
           <img src={utils.avatar(user.email)} />
         </Link>
@@ -28,4 +28,4 @@ class ChirpBox extends React.Component{
   }
 }
 
-export default ChirpBox;
+export default TweetBox;

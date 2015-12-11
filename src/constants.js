@@ -1,9 +1,9 @@
 import keyMirror from 'keymirror';
 
 export default keyMirror({
-  CHIRP: null,
-  CHIRPED: null,
-  GOT_CHIRPS: null,
+  TWEET: null,
+  TWEETED: null,
+  GOT_TWEETS: null,
   GOT_CURRENT_USER: null,
   GOT_USERS: null,
   FOLLOW: null,

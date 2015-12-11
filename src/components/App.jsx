@@ -9,7 +9,7 @@ class App extends React.Component{
     return (
       <div>
         <div className="row">
-          <h1>Chirper</h1>
+          <h1>Tweet Example</h1>
         </div>
 
         <div className="row">

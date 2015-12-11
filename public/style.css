@@ -1,11 +1,11 @@
-.chirp {
+.tweet {
   list-style-type: none;
   padding: 6px;
   border: 1px solid #d1d1d1;
   border-radius: 4px;
 }
 
-.chirp p {
+.tweet p {
   margin-bottom: 0;
 }
 
@@ -13,12 +13,12 @@
   color: #d1d1d1;
 }
 
-.chirp img {
+.tweet img {
   display: none;
 }
 
 @media (min-width: 550px) {
-  .chirp img {
+  .tweet img {
     display: block;
     border-radius: 4px;
     width: 100%;

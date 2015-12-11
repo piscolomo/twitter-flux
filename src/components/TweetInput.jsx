@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ChirpInput extends React.Component{
+class TweetInput extends React.Component{
   constructor(props){
     super(props);
     this.state = {value: ''};
@@ -19,11 +19,11 @@ class ChirpInput extends React.Component{
           <input className="u-full-width" type="text" placeholder="Say something!" value={this.state.value} onChange={this.handleChange.bind(this)} />
         </div>
         <div className="three columns">
-          <button className="u-full-width button-primary" onClick={this.handleClick.bind(this)}>Chirp</button>
+          <button className="u-full-width button-primary" onClick={this.handleClick.bind(this)}>Tweet</button>
         </div>
       </div>
     );
   }
 }
 
-export default ChirpInput;
+export default TweetInput;

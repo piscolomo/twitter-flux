@@ -14,7 +14,7 @@ let routes = (
   </Route>
 );
 
-API.fetchChirps();
+API.fetchTweets();
 API.fetchUsers();
 
 ReactRouter.run(routes, ReactRouter.HistoryLocation, (Root)=>{

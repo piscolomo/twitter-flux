@@ -4,13 +4,13 @@ import UserStore from './users';
 
 export default Store.extend({
   init(){
-    this.bindAction(constants.GOT_CHIRPS, this.set);
-    this.bindAction(constants.CHIRPED, this.add);
+    this.bindAction(constants.GOT_TWEETS, this.set);
+    this.bindAction(constants.TWEETED, this.add);
   },
   timeline(){
     let ids = [UserStore.currentUser.cid].concat(UserStore.currentUser.following);
-    return this._data.filter((chirp)=>{
-      return ids.indexOf(chirp.userId) > -1;
+    return this._data.filter((tweet)=>{
+      return ids.indexOf(tweet.userId) > -1;
     });
   },
 });

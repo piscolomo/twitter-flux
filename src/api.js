@@ -25,16 +25,16 @@ function post(url, body){
 }
 
 const API = {
-  fetchChirps(){
-    get('/api/chirps').then(actions.gotChirps.bind(actions));
+  fetchTweets(){
+    get('/api/tweets').then(actions.gotTweets.bind(actions));
   },
   fetchUsers(){
     get('/api/users').then(actions.gotUsers.bind(actions));
   },
-  saveChirp(text){
+  saveTweet(text){
     text = text.trim();
     if (text === "") return;
-    post('/api/chirps', {text: text}).then(actions.chirped.bind(actions));
+    post('/api/tweets', {text: text}).then(actions.tweeted.bind(actions));
   },
   follow(id){
     post('/api/follow/' + id).then(actions.followed.bind(actions));
@@ -46,8 +46,8 @@ const API = {
 
 dispatcher.register((action)=>{
   switch (action.actionType){
-    case constants.CHIRP:
-      API.saveChirp(action.data);
+    case constants.TWEET:
+      API.saveTweet(action.data);
       break;
 
     case constants.FOLLOW:

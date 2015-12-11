@@ -2,7 +2,7 @@ import React from 'react';
 import actions from '../actions';
 import UserStore from '../stores/users';
 import {Link} from 'react-router';
-import Box from './ChirpBox';
+import Box from './TweetBox';
 import FollowButton from './FollowButton';
 
 function getInitialState(){

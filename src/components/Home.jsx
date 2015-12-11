@@ -1,11 +1,11 @@
 import React from 'react';
 import actions from '../actions';
-import ChirpStore from '../stores/chirps';
-import ChirpInput from './ChirpInput';
-import ChirpList from './ChirpList';
+import TweetStore from '../stores/tweets';
+import TweetInput from './TweetInput';
+import TweetList from './TweetList';
 
 function getInitialState(){
-  return {chirps: ChirpStore.timeline()};
+  return {tweets: TweetStore.timeline()};
 }
 
 class Home extends React.Component{
@@ -14,22 +14,22 @@ class Home extends React.Component{
     this.state = getInitialState();
   }
   componentDidMount(){
-    ChirpStore.addChangeListener(this.onChange.bind(this));
+    TweetStore.addChangeListener(this.onChange.bind(this));
   }
   onChange(){
     this.setState(getInitialState());
   }
   componentWillUnmount(){
-    ChirpStore.removeChangeListener(this.onChange.bind(this));
+    TweetStore.removeChangeListener(this.onChange.bind(this));
   }
-  saveChirp(text){
-    actions.chirp(text);
+  saveTweet(text){
+    actions.tweet(text);
   }
   render(){
     return (
       <div>
-        <ChirpInput onSave={this.saveChirp} />
-        <ChirpList chirps={this.state.chirps} />
+        <TweetInput onSave={this.saveTweet} />
+        <TweetList tweets={this.state.tweets} />
       </div>
     );
   }
